@@ -16,8 +16,8 @@ $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $dni = $_POST['dni'];
 $edad = $_POST['edad'];
-$idDepartamento1 = $_POST['idDepartamento1'];
-$idMunicipio1 = $_POST['idMunicipio1'];
+$departamento = $_POST['departamento'];
+$municipio = $_POST['municipio'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['telefono'];
 $tipo_sangre = $_POST['tipo_sangre'];
@@ -27,9 +27,10 @@ $fechaActual = date('Y-m-d'); // Obtiene la fecha actual en el formato 'YYYY-MM-
 
 
 // Inserción de los datos en la base de datos
-$sql = "INSERT INTO formulario (nombre, apellido, dni, edad, departamento, municipio, direccion, telefono, tipo_sangre, contacto_emergencia, telefono_emergencia, fecha_actual) VALUES ('$nombre', '$apellido', '$dni','$edad', '$idDepartamento1', '$idMunicipio1', '$direccion', '$telefono', '$tipo_sangre', '$contacto_emergencia', '$telefono_emergencia' , '$fechaActual')";
+$sql = "INSERT INTO formulario (nombre, apellido, dni, edad, departamento, municipio, direccion, telefono, tipo_sangre, contacto_emergencia, telefono_emergencia, fecha_actual) VALUES ('$nombre', '$apellido', '$dni','$edad', '$departamento', '$municipio', '$direccion', '$telefono', '$tipo_sangre', '$contacto_emergencia', '$telefono_emergencia' , '$fechaActual')";
 if ($conn->query($sql) === TRUE) {
-    echo "Solicitud Enviada correctamente.";
+    echo "Registro Enviada correctamente.";
+    
     
     // Redireccionar a otra página web
    //  header("Location: SR/FormularioRegistro.html");

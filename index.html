@@ -27,7 +27,7 @@
     </ul>
 
 
-    <center> <h1 class="display-1">Gran 4to de Milla en La Ceiba</h1></center>
+    <center> <h1 class="display-1">GRAN 4TO DE MILLA LA CEIBA</h1></center>
   
   
   </head>
@@ -43,9 +43,9 @@
   <body onload="obtenerFechaActual()"></body>
   
     
-    <div class="container" >
-      <h4 class="py-3 mb-4"><b></b> | COMPLETA TODOS LOS CAMPOS PARA REALIZAR UN NUEVO REGISTRO</h4>
-      <label id="fecha_actual" for="fecha_actual">Fecha_actual:</label>
+    <div class="container-sm" >
+      <center>  <h4 class="py-3 mb-4"><b></b> | COMPLETA TODOS LOS CAMPOS PARA REALIZAR TU REGISTRO |</h4></center>
+      <label id="fecha_actual" for="fecha_actual" hidden>Fecha_actual:</label>
 
       <form id="form" action="PHP/Guardar.php" method="POST">
 
@@ -53,11 +53,11 @@
          
         <div class="row">
           <div class="col">
-            <label for="exampleInputPassword1" class="form-label">Nombres</label>
+            <label for="exampleInputPassword1" style="color: red; font-weight: bold;" class="form-label">Nombres</label>
             <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" id="nombre" name="nombre" required>
           </div>
           <div class="col">
-            <label for="exampleInputPassword1" class="form-label">Apellidos</label>
+            <label for="exampleInputPassword1" style="color: red; font-weight: bold;" class="form-label">Apellidos</label>
             <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" id="apellido" name="apellido" required>
           </div>
         </div>
@@ -67,7 +67,7 @@
         <div class="mb-3">
           <div class="row">
             <div class="col">
-              <label for="exampleInputPassword1" class="form-label">No. DNI</label>
+              <label for="exampleInputPassword1" class="form-label">No. DNI o No. Identificación</label>
               <input type="number" class="form-control" placeholder="DNI" id="dni" name="dni" required >
             </div>
             <div class="col">
@@ -87,31 +87,32 @@
               <label for="exampleInputPassword1" class="form-label">Departamento</label>
               <select class="form-select" aria-label="Default select example"  onchange="formPlazaChangeMunicipio()" name = "idDepartamento1" id="idDepartamento1" required>
                 <option selected>Seleccionar</option>
-                <option value="1">Francisco Morazán</option>
-                <option value="2">Atlántida</option>
-                <option value="3">Colón</option>
-                <option value="4">Comayagua</option>
-                <option value="5">Copán</option>
-                <option value="6">Cortés</option>
-                <option value="7">Choluteca</option>
-                <option value="8">El Paraíso</option>
-                <option value="9">Gracias a Dios</option>
-                <option value="10">Intibucá</option>
-                <option value="11">Islas de la Bahía</option>
-                <option value="12">La Paz</option>
-                <option value="13">Lempira</option>
-                <option value="14">Ocotepeque</option>
-                <option value="15">Santa Bárbara</option>
-                <option value="16">Valle</option>
-                <option value="17">Yoro</option>
-                <option value="18">Olancho</option>
+                <option value="1">FRANCISCO MORAZÁN</option>
+                <option value="2">ATLANTIDA</option>
+                <option value="3">COLON</option>
+                <option value="4">COMAYAGUA</option>
+                <option value="5">COPAN</option>
+                <option value="6">CORTES</option>
+                <option value="7">CHOLUTECA</option>
+                <option value="8">EL PARAISO</option>
+                <option value="9">GRACIAS A DIOS</option>
+                <option value="10">INTIBUCA</option>
+                <option value="11">ISLAS DE LA BAHIA</option>
+                <option value="12">LA PAZ</option>
+                <option value="13">LEMPIRA</option>
+                <option value="14">OCOTEPEQUE</option>
+                <option value="15">SANTA BARBARA/option>
+                <option value="16">VALLE</option>
+                <option value="17">YORO</option>
+                <option value="18">OLANCHO</option>
+                <option value="19">EXTRANJERO</option>
               </select>
             </div>
             <div class="col">
               <label for="exampleInputPassword1" class="form-label">Municipios</label>
-          <select class="form-select" aria-label="Default select example" name = "idMunicipio1" id="municipio" required>
-          <option value="" hidden select>Selecciona un departamento primero</option>
-          </select>
+          <select class="form-select" aria-label="Default select example" name = "idMunicipio1" id="idMunicipio1" onchange="ShowSelected1()" required>
+          <option select>Selecciona un departamento primero</option>
+        </select>
             </div>
           </div>
         </div>
@@ -142,8 +143,9 @@
 
 
         <div class="mb-3">
-          <label for="TipoSangre" class="form-label">Tipo de Sangre</label>
-          <select class="form-select" aria-label="Default select example" id="tipo_sangre" name="tipo_sangre" required>
+          <label for="TipoSangre" style="color: red; font-weight: bold;" class="form-label">Tipo de Sangre</label>
+          <select class="form-select" aria-label="Default select example" id="tipo_sangre1" name="tipo_sangre1" onchange="ShowSelected2()" required>
+           
             <option selected>Seleccionar</option>
             <option value="1">A+</option>
             <option value="2">O+</option>
@@ -154,44 +156,60 @@
             <option value="1">B-</option>
             <option value="2">AB-</option>
           </select>
-        </div>
-
-
-
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Verificado</label>
+          <div id="sangre" class="form-text">Muy importante brindar esta información de forma correcta.</div>
         </div>
 
 
         <div class="mb-3">
           <div class="row">
             <div class="col">
-              <label for="exampleInputPassword1" class="form-label">Contacto de Emergencia</label>
+              <label for="exampleInputPassword1" style="color: red; font-weight: bold;" class="form-label">Contacto de Emergencia</label>
               <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" id="contacto_emergencia" name="contacto_emergencia" required>
             </div>
             <div class="col">
-              <label for="exampleInputPassword1" class="form-label">Telefono contacto de Emergencia</label>
+              <label for="exampleInputPassword1" style="color: red; font-weight: bold;" class="form-label">Telefono de Emergencia</label>
               <input type="number" class="form-control" placeholder="Telefono" aria-label="Telefono" id="telefono_emergencia" name="telefono_emergencia" required>
             </div>
           </div>
         </div>
 
+        <input type="text" class="form-control" id="departamento" name="departamento" hidden>
+        <input type="text" class="form-control" id="municipio" name="municipio" hidden>
+        <input type="text" class="form-control" id="tipo_sangre" name="tipo_sangre" hidden>
 
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button  class="btn btn-primary" onclick="guardarDatos()">ENVIAR REGISTRO NUEVO</button>
+          <p></p><button input type="submit" class="btn btn-primary">REALIZAR REGISTRO</button></p>
         </div>
-
 
       </form>
       </div>
 
+      <footer><center><p>Copyright 2023 ©YerminBarrientos</p></center></footer>
+      <footer><center><p>Nos reservamos nuestro derecho de admisión</p></center></footer>
 
-   
-      <footer><center><p>Copyright 2023©</p></center></footer>
-      <footer><center><p>Nos reservamos nuestro derecho de admision</p></center></footer>
-  </body>
+      </body>
 
+
+      <script type="text/javascript">
+      function ShowSelected1()
+      {
+      var combo = document.getElementById("idMunicipio1");
+      var selected = combo.options[combo.selectedIndex].text;
+      document.getElementById("municipio").value = selected;
+     // alert(selected);
+      }
+      </script>
+
+
+<script type="text/javascript">
+  function ShowSelected2()
+  {
+  var combo = document.getElementById("tipo_sangre1");
+  var selected = combo.options[combo.selectedIndex].text;
+  document.getElementById("tipo_sangre").value = selected;
+ // alert(selected);
+  }
+  </script>
 
 
 
@@ -1708,12 +1726,57 @@
       "id": 298,
       "Descripcion": "PATUCA",
       "idDepartamento": 18
+    },
+    {
+      "id": 299,
+      "Descripcion": "USA",
+      "idDepartamento": 19
+  },
+    {
+      "id": 300,
+      "Descripcion": "MEXICO",
+      "idDepartamento": 19
+    },
+    {
+      "id": 301,
+      "Descripcion": "BELIZE",
+      "idDepartamento": 19
+    },
+    {
+      "id": 302,
+      "Descripcion": "GUATEMALA",
+      "idDepartamento": 19
+    },
+    {
+      "id": 303,
+      "Descripcion": "EL SALVADOR",
+      "idDepartamento": 19
+    },
+    {
+      "id": 304,
+      "Descripcion": "NICARAGUA",
+      "idDepartamento": 19
+    },
+    {
+      "id": 305,
+      "Descripcion": "COSTA RICA",
+      "idDepartamento": 19
+    },
+    {
+      "id": 306,
+      "Descripcion": "PANAMA",
+      "idDepartamento": 19
     }
 ];
 
 function formPlazaChangeMunicipio(){
     var select = document.querySelector("#form [name='idMunicipio1']")
     var departamento = document.querySelector("#form [name='idDepartamento1']").value
+
+    var combo = document.getElementById("idDepartamento1");
+      var selected = combo.options[combo.selectedIndex].text;
+      document.getElementById("departamento").value = selected;
+
     if (departamento != ""){
         select.removeAttribute("disabled")
         select.innerHTML = ""
@@ -1738,40 +1801,6 @@ function formPlazaChangeMunicipio(){
 }
 
      </script>
-
-<script>
-
-
-  function guardarDatos() {
-    var nombre = document.getElementById('nombre').value;
-    var apellido = document.getElementById('apellido').value;
-    var dni = document.getElementById('dni').value;
-    var edad = document.getElementById('edad').edad;
-    var idDepartamento1 = document.getElementById('idDepartamento1').options[document.getSelection('idDepartamento1').selectedIndex].text;
-    var idMunicipio1 = document.getElementById('idMunicipio1').options[document.getSelection('idMunicipio1').selectedIndex].text;
-    var direccion = document.getElementById('direccion').direccion;
-    var telefono = document.getElementById('edad').telefono;
-    var tipo_sangre = document.getElementById('edad').tipo_sangre;
-    var contacto_emergencia = document.getElementById('edad').contacto_emergencia;
-    var telefono_emergencia = document.getElementById('edad').telefono_emergencia;
-    var fecha_actual = document.getElementById('fecha_actual').fecha_actual;
-
-    // Envío de los datos al archivo PHP para guardarlos en la base de datos
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "PHP/Guardar.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        // Se ha recibido una respuesta del servidor
-        console.log(xhr.responseText);
-      }
-    };
-    xhr.send("nombre=" + nombre + "&apellido=" + apellido + "&dni=" + dni + "&edad=" + edad + "&idDepartamento1=" +
-    idDepartamento1+ "&idMunicipio1=" + idMunicipio1+ "&direccion=" + direccion+ "&telefono=" + telefono+ "&tipo_sangre=" +
-    tipo_sangre+ "&contacto_emergencia=" + contacto_emergencia+ "&telefono_emergencia=" + telefono_emergencia+ "&fecha_actual=" + fecha_actual);
-  }
-</script>
-
 
 
 
