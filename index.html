@@ -1,0 +1,1779 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    
+    <div class="text-center">
+      <img src="Imagenes\amarillo.png" class="img-fluid" alt="...">
+    </div>
+
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">INICIO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">REGLAMENTO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://www.google.com">SALIR</a>
+      </li>
+    </ul>
+
+
+    <center> <h1 class="display-1">Gran 4to de Milla en La Ceiba</h1></center>
+  
+  
+  </head>
+  
+  <style>
+    body {
+      background-image: radial-gradient(circle at 50% 45.07%, #feffff 0, #efffff 12.5%, #ddfffd 25%, #cafbf7 37.5%, #b5f2f2 50%, #9fe9ee 62.5%, #8ae1ec 75%, #76d9eb 87.5%, #62d1eb 100%);
+    }
+
+</style>
+
+
+  <body onload="obtenerFechaActual()"></body>
+  
+    
+    <div class="container" >
+      <h4 class="py-3 mb-4"><b></b> | COMPLETA TODOS LOS CAMPOS PARA REALIZAR UN NUEVO REGISTRO</h4>
+      <label id="fecha_actual" for="fecha_actual">Fecha_actual:</label>
+
+      <form id="form" action="PHP/Guardar.php" method="POST">
+
+        <div class="mb-3">
+         
+        <div class="row">
+          <div class="col">
+            <label for="exampleInputPassword1" class="form-label">Nombres</label>
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" id="nombre" name="nombre" required>
+          </div>
+          <div class="col">
+            <label for="exampleInputPassword1" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" id="apellido" name="apellido" required>
+          </div>
+        </div>
+      </div>
+
+
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+              <label for="exampleInputPassword1" class="form-label">No. DNI</label>
+              <input type="number" class="form-control" placeholder="DNI" id="dni" name="dni" required >
+            </div>
+            <div class="col">
+              <label for="exampleInputPassword1" class="form-label">Edad</label>
+              <input type="number" class="form-control" placeholder="Edad" id="edad" name="edad" required>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+              <label for="exampleInputPassword1" class="form-label">Departamento</label>
+              <select class="form-select" aria-label="Default select example"  onchange="formPlazaChangeMunicipio()" name = "idDepartamento1" id="idDepartamento1" required>
+                <option selected>Seleccionar</option>
+                <option value="1">Francisco Morazán</option>
+                <option value="2">Atlántida</option>
+                <option value="3">Colón</option>
+                <option value="4">Comayagua</option>
+                <option value="5">Copán</option>
+                <option value="6">Cortés</option>
+                <option value="7">Choluteca</option>
+                <option value="8">El Paraíso</option>
+                <option value="9">Gracias a Dios</option>
+                <option value="10">Intibucá</option>
+                <option value="11">Islas de la Bahía</option>
+                <option value="12">La Paz</option>
+                <option value="13">Lempira</option>
+                <option value="14">Ocotepeque</option>
+                <option value="15">Santa Bárbara</option>
+                <option value="16">Valle</option>
+                <option value="17">Yoro</option>
+                <option value="18">Olancho</option>
+              </select>
+            </div>
+            <div class="col">
+              <label for="exampleInputPassword1" class="form-label">Municipios</label>
+          <select class="form-select" aria-label="Default select example" name = "idMunicipio1" id="municipio" required>
+          <option value="" hidden select>Selecciona un departamento primero</option>
+          </select>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="mb-3">
+          <label for="inputAddress" class="form-label">Dirección</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="12 calle Ave. San Isidro" id="direccion" name="direccion" required>
+        </div>
+
+
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+              <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" id="correo" name="correro">
+              <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
+            </div>
+            <div class="col">
+              <label for="Telefono" class="form-label">Numero Telefonico</label>
+              <input type="number" class="form-control" id="exampleInputPassword1" placeholder="0000-0000" id="telefono" name="telefono" required >
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="mb-3">
+          <label for="TipoSangre" class="form-label">Tipo de Sangre</label>
+          <select class="form-select" aria-label="Default select example" id="tipo_sangre" name="tipo_sangre" required>
+            <option selected>Seleccionar</option>
+            <option value="1">A+</option>
+            <option value="2">O+</option>
+            <option value="1">B+</option>
+            <option value="2">AB+</option>
+            <option value="1">A-</option>
+            <option value="2">O-</option>
+            <option value="1">B-</option>
+            <option value="2">AB-</option>
+          </select>
+        </div>
+
+
+
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Verificado</label>
+        </div>
+
+
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+              <label for="exampleInputPassword1" class="form-label">Contacto de Emergencia</label>
+              <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" id="contacto_emergencia" name="contacto_emergencia" required>
+            </div>
+            <div class="col">
+              <label for="exampleInputPassword1" class="form-label">Telefono contacto de Emergencia</label>
+              <input type="number" class="form-control" placeholder="Telefono" aria-label="Telefono" id="telefono_emergencia" name="telefono_emergencia" required>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button  class="btn btn-primary" onclick="guardarDatos()">ENVIAR REGISTRO NUEVO</button>
+        </div>
+
+
+      </form>
+      </div>
+
+
+   
+      <footer><center><p>Copyright 2023©</p></center></footer>
+      <footer><center><p>Nos reservamos nuestro derecho de admision</p></center></footer>
+  </body>
+
+
+
+
+  <script>
+    // Función para obtener la fecha actual
+    function obtenerFechaActual() {
+      var fecha = new Date();
+      
+      // Obtener los componentes de la fecha
+      var dia = fecha.getDate();
+      var mes = fecha.getMonth() + 1; // Los meses van de 0 a 11, por lo tanto se suma 1
+      var anio = fecha.getFullYear();
+      
+      // Formatear la fecha como dd/mm/yyyy
+      var fechaActual = dia + '/' + mes + '/' + anio;
+      
+      // Mostrar la fecha actual en un elemento HTML
+      document.getElementById('fecha_actual').innerHTML = fechaActual;
+    }
+  </script>
+
+
+
+
+
+
+     <script>
+  municipios=[{
+      "id": 1,
+      "Descripcion": "TEGUCIGALPA",
+      "idDepartamento":1
+    },
+    {
+      "id": 2,
+      "Descripcion": "DISTRITO CENTRAL",
+      "idDepartamento": 1
+    },
+    {
+      "id": 3,
+      "Descripcion": "ALUBAREN",
+      "idDepartamento": 1
+    },
+    {
+      "id": 4,
+      "Descripcion": "CEDROS",
+      "idDepartamento": 1
+    },
+    {
+      "id": 5,
+      "Descripcion": "CURAREN",
+      "idDepartamento": 1
+    },
+    {
+      "id": 6,
+      "Descripcion": "EL PORVENIR",
+      "idDepartamento": 1
+    },
+    {
+      "id": 7,
+      "Descripcion": "GUAIMACA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 8,
+      "Descripcion": "LA LIBERTAD",
+      "idDepartamento": 1
+    },
+    {
+      "id": 9,
+      "Descripcion": "LA VENTA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 10,
+      "Descripcion": "LEPATERIQUE",
+      "idDepartamento": 1
+    },
+    {
+      "id": 11,
+      "Descripcion": "MARAITA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 12,
+      "Descripcion": "MARALE",
+      "idDepartamento": 1
+    },
+    {
+      "id": 13,
+      "Descripcion": "NUEVA ARMENIA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 14,
+      "Descripcion": "OJOJONA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 15,
+      "Descripcion": "ORICA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 16,
+      "Descripcion": "REITOCA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 17,
+      "Descripcion": "SABANAGRANDE",
+      "idDepartamento": 1
+    },
+    {
+      "id": 18,
+      "Descripcion": "SAN BUENAVENTURA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 19,
+      "Descripcion": "SAN IGNACIO",
+      "idDepartamento": 1
+    },
+    {
+      "id": 20,
+      "Descripcion": "SAN JUAN DE FLORES",
+      "idDepartamento": 1
+    },
+    {
+      "id": 21,
+      "Descripcion": "SAN MIGUELITO",
+      "idDepartamento": 1
+    },
+    {
+      "id": 22,
+      "Descripcion": "SANTA ANA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 23,
+      "Descripcion": "SANTA LUC\u00cdA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 24,
+      "Descripcion": "TALANGA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 25,
+      "Descripcion": "TATUMBLA",
+      "idDepartamento": 1
+    },
+    {
+      "id": 26,
+      "Descripcion": "VALLE DE ANGELES",
+      "idDepartamento": 1
+    },
+    {
+      "id": 27,
+      "Descripcion": "VILLA DE SAN FRANCISCO",
+      "idDepartamento": 1
+    },
+    {
+      "id": 28,
+      "Descripcion": "VALLECILLO",
+      "idDepartamento": 1
+    },
+    {
+      "id": 29,
+      "Descripcion": "LA CEIBA",
+      "idDepartamento": 2
+    },
+    {
+      "id": 30,
+      "Descripcion": "EL PORVENIR",
+      "idDepartamento": 2
+    },
+    {
+      "id": 31,
+      "Descripcion": "ESPARTA",
+      "idDepartamento": 2
+    },
+    {
+      "id": 32,
+      "Descripcion": "JUTIAPA",
+      "idDepartamento": 2
+    },
+    {
+      "id": 33,
+      "Descripcion": "LA MASICA",
+      "idDepartamento": 2
+    },
+    {
+      "id": 34,
+      "Descripcion": "SAN FRANCISCO",
+      "idDepartamento": 2
+    },
+    {
+      "id": 35,
+      "Descripcion": "TELA",
+      "idDepartamento": 2
+    },
+    {
+      "id": 36,
+      "Descripcion": "ARIZONA",
+      "idDepartamento": 2
+    },
+    {
+      "id": 37,
+      "Descripcion": "TRUJILLO",
+      "idDepartamento": 3
+    },
+    {
+      "id": 38,
+      "Descripcion": "BALFATE",
+      "idDepartamento": 3
+    },
+    {
+      "id": 39,
+      "Descripcion": "IRIONA",
+      "idDepartamento": 3
+    },
+    {
+      "id": 40,
+      "Descripcion": "LIM\u00d3N",
+      "idDepartamento": 3
+    },
+    {
+      "id": 41,
+      "Descripcion": "SABA",
+      "idDepartamento": 3
+    },
+    {
+      "id": 42,
+      "Descripcion": "SANTA F\u00c9",
+      "idDepartamento": 3
+    },
+    {
+      "id": 43,
+      "Descripcion": "SANTA ROSA DE AGUAN",
+      "idDepartamento": 3
+    },
+    {
+      "id": 44,
+      "Descripcion": "SONAGUERA",
+      "idDepartamento": 3
+    },
+    {
+      "id": 45,
+      "Descripcion": "TOCOA",
+      "idDepartamento": 3
+    },
+    {
+      "id": 46,
+      "Descripcion": "BONITO ORIENTAL",
+      "idDepartamento": 3
+    },
+    {
+      "id": 47,
+      "Descripcion": "COMAYAGUA",
+      "idDepartamento": 4
+    },
+    {
+      "id": 48,
+      "Descripcion": "AJUTERIQUE",
+      "idDepartamento": 4
+    },
+    {
+      "id": 49,
+      "Descripcion": "EL ROSARIO",
+      "idDepartamento": 4
+    },
+    {
+      "id": 50,
+      "Descripcion": "ESQUIAS",
+      "idDepartamento": 4
+    },
+    {
+      "id": 51,
+      "Descripcion": "HUMUYA",
+      "idDepartamento": 4
+    },
+    {
+      "id": 52,
+      "Descripcion": "LA LIBERTAD",
+      "idDepartamento": 4
+    },
+    {
+      "id": 53,
+      "Descripcion": "LAMANI",
+      "idDepartamento": 4
+    },
+    {
+      "id": 54,
+      "Descripcion": "LA TRINIDAD",
+      "idDepartamento": 4
+    },
+    {
+      "id": 55,
+      "Descripcion": "LEJAMANI",
+      "idDepartamento": 4
+    },
+    {
+      "id": 56,
+      "Descripcion": "MEAMBAR",
+      "idDepartamento": 4
+    },
+    {
+      "id": 57,
+      "Descripcion": "MINAS DE ORO",
+      "idDepartamento": 4
+    },
+    {
+      "id": 58,
+      "Descripcion": "OJOS DE AGUA",
+      "idDepartamento": 4
+    },
+    {
+      "id": 59,
+      "Descripcion": "SAN JER\u00d3NIMO",
+      "idDepartamento": 4
+    },
+    {
+      "id": 60,
+      "Descripcion": "SAN JOS\u00c9 COMAYAGUA",
+      "idDepartamento": 4
+    },
+    {
+      "id": 61,
+      "Descripcion": "SAN JOS\u00c9 DEL POTRERO",
+      "idDepartamento": 4
+    },
+    {
+      "id": 62,
+      "Descripcion": "SAN LUIS",
+      "idDepartamento": 4
+    },
+    {
+      "id": 63,
+      "Descripcion": "SAN SEBASTI\u00c1N",
+      "idDepartamento": 4
+    },
+    {
+      "id": 64,
+      "Descripcion": "SIGUATEPEQUE",
+      "idDepartamento": 4
+    },
+    {
+      "id": 65,
+      "Descripcion": "VILLA DE SAN ANTONIO",
+      "idDepartamento": 4
+    },
+    {
+      "id": 66,
+      "Descripcion": "LAS LAJAS",
+      "idDepartamento": 4
+    },
+    {
+      "id": 67,
+      "Descripcion": "TAULABE",
+      "idDepartamento": 4
+    },
+    {
+      "id": 68,
+      "Descripcion": "SANTA ROSA DE COP\u00c1N",
+      "idDepartamento": 5
+    },
+    {
+      "id": 69,
+      "Descripcion": "CABA\u00d1AS",
+      "idDepartamento": 5
+    },
+    {
+      "id": 70,
+      "Descripcion": "CONCEPCI\u00d3N",
+      "idDepartamento": 5
+    },
+    {
+      "id": 71,
+      "Descripcion": "COP\u00c1N RUINAS",
+      "idDepartamento": 5
+    },
+    {
+      "id": 72,
+      "Descripcion": "CORQUIN",
+      "idDepartamento": 5
+    },
+    {
+      "id": 73,
+      "Descripcion": "CUCUYAGUA",
+      "idDepartamento": 5
+    },
+    {
+      "id": 74,
+      "Descripcion": "DOLORES",
+      "idDepartamento": 5
+    },
+    {
+      "id": 75,
+      "Descripcion": "DULCE NOMBRE",
+      "idDepartamento": 5
+    },
+    {
+      "id": 76,
+      "Descripcion": "EL PARA\u00cdSO",
+      "idDepartamento": 5
+    },
+    {
+      "id": 77,
+      "Descripcion": "FLORIDA",
+      "idDepartamento": 5
+    },
+    {
+      "id": 78,
+      "Descripcion": "LA JIGUA",
+      "idDepartamento": 5
+    },
+    {
+      "id": 79,
+      "Descripcion": "LA UNI\u00d3N",
+      "idDepartamento": 5
+    },
+    {
+      "id": 80,
+      "Descripcion": "NUEVA ARCADIA",
+      "idDepartamento": 5
+    },
+    {
+      "id": 81,
+      "Descripcion": "SAN AGUST\u00cdN",
+      "idDepartamento": 5
+    },
+    {
+      "id": 82,
+      "Descripcion": "SAN ANTONIO",
+      "idDepartamento": 5
+    },
+    {
+      "id": 83,
+      "Descripcion": "SAN JER\u00d3NIMO",
+      "idDepartamento": 5
+    },
+    {
+      "id": 84,
+      "Descripcion": "SAN JOS\u00c9--",
+      "idDepartamento": 5
+    },
+    {
+      "id": 85,
+      "Descripcion": "SAN JUAN DE OPOA",
+      "idDepartamento": 5
+    },
+    {
+      "id": 86,
+      "Descripcion": "SAN NICOL\u00c1S",
+      "idDepartamento": 5
+    },
+    {
+      "id": 87,
+      "Descripcion": "SAN PEDRO",
+      "idDepartamento": 5
+    },
+    {
+      "id": 88,
+      "Descripcion": "SANTA RITA, COPAN",
+      "idDepartamento": 5
+    },
+    {
+      "id": 89,
+      "Descripcion": "TRINIDAD",
+      "idDepartamento": 5
+    },
+    {
+      "id": 90,
+      "Descripcion": "VERACRUZ",
+      "idDepartamento": 5
+    },
+    {
+      "id": 91,
+      "Descripcion": "SAN PEDRO SULA",
+      "idDepartamento": 6
+    },
+    {
+      "id": 92,
+      "Descripcion": "CHOLOMA",
+      "idDepartamento": 6
+    },
+    {
+      "id": 93,
+      "Descripcion": "OMOA",
+      "idDepartamento": 6
+    },
+    {
+      "id": 94,
+      "Descripcion": "PIMIENTA",
+      "idDepartamento": 6
+    },
+    {
+      "id": 95,
+      "Descripcion": "POTRERILLOS",
+      "idDepartamento": 6
+    },
+    {
+      "id": 96,
+      "Descripcion": "PUERTO CORT\u00c9S",
+      "idDepartamento": 6
+    },
+    {
+      "id": 97,
+      "Descripcion": "SAN ANTONIO DE CORT\u00c9S",
+      "idDepartamento": 6
+    },
+    {
+      "id": 98,
+      "Descripcion": "SAN FRANCISCO DE YOJOA",
+      "idDepartamento": 6
+    },
+    {
+      "id": 99,
+      "Descripcion": "SAN MANUEL",
+      "idDepartamento": 6
+    },
+    {
+      "id": 100,
+      "Descripcion": "SANTA CRUZ DE YOJOA",
+      "idDepartamento": 6
+    },
+    {
+      "id": 101,
+      "Descripcion": "VILLANUEVA",
+      "idDepartamento": 6
+    },
+    {
+      "id": 102,
+      "Descripcion": "LA LIMA",
+      "idDepartamento": 6
+    },
+    {
+      "id": 103,
+      "Descripcion": "CHOLUTECA",
+      "idDepartamento": 7
+    },
+    {
+      "id": 104,
+      "Descripcion": "APACILAGUA",
+      "idDepartamento": 7
+    },
+    {
+      "id": 105,
+      "Descripcion": "CONCEPCI\u00d3N DE MAR\u00cdA",
+      "idDepartamento": 7
+    },
+    {
+      "id": 106,
+      "Descripcion": "DUYURE",
+      "idDepartamento": 7
+    },
+    {
+      "id": 107,
+      "Descripcion": "EL CORPUS",
+      "idDepartamento": 7
+    },
+    {
+      "id": 108,
+      "Descripcion": "EL TRIUNFO",
+      "idDepartamento": 7
+    },
+    {
+      "id": 109,
+      "Descripcion": "MARCOVIA",
+      "idDepartamento": 7
+    },
+    {
+      "id": 110,
+      "Descripcion": "MOROLICA",
+      "idDepartamento": 7
+    },
+    {
+      "id": 111,
+      "Descripcion": "NAMASIGUE",
+      "idDepartamento": 7
+    },
+    {
+      "id": 112,
+      "Descripcion": "OROCUINA",
+      "idDepartamento": 7
+    },
+    {
+      "id": 113,
+      "Descripcion": "PESPIRE",
+      "idDepartamento": 7
+    },
+    {
+      "id": 114,
+      "Descripcion": "SAN ANTONIO DE FLORES",
+      "idDepartamento": 7
+    },
+    {
+      "id": 115,
+      "Descripcion": "SAN ISIDRO",
+      "idDepartamento": 7
+    },
+    {
+      "id": 116,
+      "Descripcion": "SAN JOS\u00c9-",
+      "idDepartamento": 7
+    },
+    {
+      "id": 117,
+      "Descripcion": "SAN MARCOS DE COL\u00d3N",
+      "idDepartamento": 7
+    },
+    {
+      "id": 118,
+      "Descripcion": "SANTA ANA DE YUSGUARE",
+      "idDepartamento": 7
+    },
+    {
+      "id": 119,
+      "Descripcion": "YUSCARAN",
+      "idDepartamento": 8
+    },
+    {
+      "id": 120,
+      "Descripcion": "ALAUCA",
+      "idDepartamento": 8
+    },
+    {
+      "id": 121,
+      "Descripcion": "DANLI",
+      "idDepartamento": 8
+    },
+    {
+      "id": 122,
+      "Descripcion": "EL PARA\u00cdSO",
+      "idDepartamento": 8
+    },
+    {
+      "id": 123,
+      "Descripcion": "GUINOPE",
+      "idDepartamento": 8
+    },
+    {
+      "id": 124,
+      "Descripcion": "JACALEAPA",
+      "idDepartamento": 8
+    },
+    {
+      "id": 125,
+      "Descripcion": "LIURE",
+      "idDepartamento": 8
+    },
+    {
+      "id": 126,
+      "Descripcion": "MOROCELI",
+      "idDepartamento": 8
+    },
+    {
+      "id": 127,
+      "Descripcion": "OROPOLI",
+      "idDepartamento": 8
+    },
+    {
+      "id": 128,
+      "Descripcion": "POTRERILLOS",
+      "idDepartamento": 8
+    },
+    {
+      "id": 129,
+      "Descripcion": "SAN ANTONIO DE FLORES",
+      "idDepartamento": 8
+    },
+    {
+      "id": 130,
+      "Descripcion": "SAN LUCAS",
+      "idDepartamento": 8
+    },
+    {
+      "id": 131,
+      "Descripcion": "SAN MAT\u00cdAS",
+      "idDepartamento": 8
+    },
+    {
+      "id": 132,
+      "Descripcion": "SOLEDAD",
+      "idDepartamento": 8
+    },
+    {
+      "id": 133,
+      "Descripcion": "TEUPASENTI",
+      "idDepartamento": 8
+    },
+    {
+      "id": 134,
+      "Descripcion": "TEXIGUAT",
+      "idDepartamento": 8
+    },
+    {
+      "id": 135,
+      "Descripcion": "VADO ANCHO",
+      "idDepartamento": 8
+    },
+    {
+      "id": 136,
+      "Descripcion": "YAUYUPE",
+      "idDepartamento": 8
+    },
+    {
+      "id": 137,
+      "Descripcion": "TROJES",
+      "idDepartamento": 8
+    },
+    {
+      "id": 138,
+      "Descripcion": "PUERTO LEMPIRA",
+      "idDepartamento": 9
+    },
+    {
+      "id": 139,
+      "Descripcion": "BRUS LAGUNA",
+      "idDepartamento": 9
+    },
+    {
+      "id": 140,
+      "Descripcion": "AHUAS",
+      "idDepartamento": 9
+    },
+    {
+      "id": 141,
+      "Descripcion": "JUAN FRANCISCO BULNES",
+      "idDepartamento": 9
+    },
+    {
+      "id": 142,
+      "Descripcion": "VILLEDA MORALES",
+      "idDepartamento": 9
+    },
+    {
+      "id": 143,
+      "Descripcion": "WAMPUSIRPI",
+      "idDepartamento": 9
+    },
+    {
+      "id": 144,
+      "Descripcion": "LA ESPERANZA",
+      "idDepartamento": 10
+    },
+    {
+      "id": 145,
+      "Descripcion": "CAMASCA",
+      "idDepartamento": 10
+    },
+    {
+      "id": 146,
+      "Descripcion": "COLOMONCAGUA",
+      "idDepartamento": 10
+    },
+    {
+      "id": 147,
+      "Descripcion": "CONCEPCI\u00d3N",
+      "idDepartamento": 10
+    },
+    {
+      "id": 148,
+      "Descripcion": "DOLORES",
+      "idDepartamento": 10
+    },
+    {
+      "id": 149,
+      "Descripcion": "INTIBUCA",
+      "idDepartamento": 10
+    },
+    {
+      "id": 150,
+      "Descripcion": "JES\u00daS DE OTORO",
+      "idDepartamento": 10
+    },
+    {
+      "id": 151,
+      "Descripcion": "MAGDALENA",
+      "idDepartamento": 10
+    },
+    {
+      "id": 152,
+      "Descripcion": "MASAGUARA",
+      "idDepartamento": 10
+    },
+    {
+      "id": 153,
+      "Descripcion": "SAN ANTONIO",
+      "idDepartamento": 10
+    },
+    {
+      "id": 154,
+      "Descripcion": "SAN ISIDRO",
+      "idDepartamento": 10
+    },
+    {
+      "id": 155,
+      "Descripcion": "SAN JUAN",
+      "idDepartamento": 10
+    },
+    {
+      "id": 156,
+      "Descripcion": "SAN MARCOS DE LA SIERRA",
+      "idDepartamento": 10
+    },
+    {
+      "id": 157,
+      "Descripcion": "SAN MIGUELITO",
+      "idDepartamento": 10
+    },
+    {
+      "id": 158,
+      "Descripcion": "SANTA LUC\u00cdA",
+      "idDepartamento": 10
+    },
+    {
+      "id": 159,
+      "Descripcion": "YAMARANGUILA",
+      "idDepartamento": 10
+    },
+    {
+      "id": 160,
+      "Descripcion": "SAN FRANCISCO DE OPALACA",
+      "idDepartamento": 10
+    },
+    {
+      "id": 161,
+      "Descripcion": "ROAT\u00c1N",
+      "idDepartamento": 11
+    },
+    {
+      "id": 162,
+      "Descripcion": "GUANAJA",
+      "idDepartamento": 11
+    },
+    {
+      "id": 163,
+      "Descripcion": "JOS\u00c9 SANTOS GUARDIOLA",
+      "idDepartamento": 11
+    },
+    {
+      "id": 164,
+      "Descripcion": "UTILA",
+      "idDepartamento": 11
+    },
+    {
+      "id": 165,
+      "Descripcion": "LA PAZ",
+      "idDepartamento": 12
+    },
+    {
+      "id": 166,
+      "Descripcion": "AGUANTEQUERIQUE",
+      "idDepartamento": 12
+    },
+    {
+      "id": 167,
+      "Descripcion": "CABA\u00d1AS-",
+      "idDepartamento": 12
+    },
+    {
+      "id": 168,
+      "Descripcion": "CANE",
+      "idDepartamento": 12
+    },
+    {
+      "id": 169,
+      "Descripcion": "CHINACLA",
+      "idDepartamento": 12
+    },
+    {
+      "id": 170,
+      "Descripcion": "GUAJIQUIRO",
+      "idDepartamento": 12
+    },
+    {
+      "id": 171,
+      "Descripcion": "LAUTERIQUE",
+      "idDepartamento": 12
+    },
+    {
+      "id": 172,
+      "Descripcion": "MARCALA",
+      "idDepartamento": 12
+    },
+    {
+      "id": 173,
+      "Descripcion": "MERCEDES DE ORIENTE",
+      "idDepartamento": 12
+    },
+    {
+      "id": 174,
+      "Descripcion": "OPATORO",
+      "idDepartamento": 12
+    },
+    {
+      "id": 175,
+      "Descripcion": "SAN ANTONIO DEL NORTE",
+      "idDepartamento": 12
+    },
+    {
+      "id": 176,
+      "Descripcion": "SAN JOS\u00c9",
+      "idDepartamento": 12
+    },
+    {
+      "id": 177,
+      "Descripcion": "SAN JUAN",
+      "idDepartamento": 12
+    },
+    {
+      "id": 178,
+      "Descripcion": "SAN PEDRO DE TUTULE SANTA ANA",
+      "idDepartamento": 12
+    },
+    {
+      "id": 179,
+      "Descripcion": "SANTA ELENA",
+      "idDepartamento": 12
+    },
+    {
+      "id": 180,
+      "Descripcion": "SANTA MAR\u00cdA",
+      "idDepartamento": 12
+    },
+    {
+      "id": 181,
+      "Descripcion": "SANTIAGO DE PURINGLA",
+      "idDepartamento": 12
+    },
+    {
+      "id": 182,
+      "Descripcion": "YARULA",
+      "idDepartamento": 12
+    },
+    {
+      "id": 183,
+      "Descripcion": "SANTA ANA",
+      "idDepartamento": 12
+    },
+    {
+      "id": 184,
+      "Descripcion": "GRACIAS",
+      "idDepartamento": 13
+    },
+    {
+      "id": 185,
+      "Descripcion": "BEL\u00c9N",
+      "idDepartamento": 13
+    },
+    {
+      "id": 186,
+      "Descripcion": "CANDELARIA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 187,
+      "Descripcion": "COLOLACA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 188,
+      "Descripcion": "ERANDIQUE",
+      "idDepartamento": 13
+    },
+    {
+      "id": 189,
+      "Descripcion": "GUALCINCE",
+      "idDepartamento": 13
+    },
+    {
+      "id": 190,
+      "Descripcion": "GUARITA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 191,
+      "Descripcion": "LA CAMPA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 192,
+      "Descripcion": "LA IGUALA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 193,
+      "Descripcion": "LAS FLORES",
+      "idDepartamento": 13
+    },
+    {
+      "id": 194,
+      "Descripcion": "LA UNI\u00d3N",
+      "idDepartamento": 13
+    },
+    {
+      "id": 195,
+      "Descripcion": "LA VIRTUD",
+      "idDepartamento": 13
+    },
+    {
+      "id": 196,
+      "Descripcion": "LEPAERA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 197,
+      "Descripcion": "MAPULACA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 198,
+      "Descripcion": "PIRAERA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 199,
+      "Descripcion": "SAN ANDR\u00c9S",
+      "idDepartamento": 13
+    },
+    {
+      "id": 200,
+      "Descripcion": "SAN FRANCISCO",
+      "idDepartamento": 13
+    },
+    {
+      "id": 201,
+      "Descripcion": "SAN JUAN GUARITA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 202,
+      "Descripcion": "SAN MANUEL DE COLOHETE",
+      "idDepartamento": 13
+    },
+    {
+      "id": 203,
+      "Descripcion": "SAN RAFAEL",
+      "idDepartamento": 13
+    },
+    {
+      "id": 204,
+      "Descripcion": "SAN SEBASTI\u00c1N",
+      "idDepartamento": 13
+    },
+    {
+      "id": 205,
+      "Descripcion": "SANTA CRUZ",
+      "idDepartamento": 13
+    },
+    {
+      "id": 206,
+      "Descripcion": "TALGUA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 207,
+      "Descripcion": "TAMBLA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 208,
+      "Descripcion": "TOMALA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 209,
+      "Descripcion": "VALLADOLID",
+      "idDepartamento": 13
+    },
+    {
+      "id": 210,
+      "Descripcion": "VIRGINIA",
+      "idDepartamento": 13
+    },
+    {
+      "id": 211,
+      "Descripcion": "SAN MARCOS DE CAIQUIN",
+      "idDepartamento": 13
+    },
+    {
+      "id": 212,
+      "Descripcion": "BELEN GUALCHO",
+      "idDepartamento": 14
+    },
+    {
+      "id": 213,
+      "Descripcion": "CONCEPCION",
+      "idDepartamento": 14
+    },
+    {
+      "id": 214,
+      "Descripcion": "DOLORES MERENDON",
+      "idDepartamento": 14
+    },
+    {
+      "id": 215,
+      "Descripcion": "FRATERNIDAD",
+      "idDepartamento": 14
+    },
+    {
+      "id": 216,
+      "Descripcion": "LA ENCARNACION",
+      "idDepartamento": 14
+    },
+    {
+      "id": 217,
+      "Descripcion": "LA LABOR",
+      "idDepartamento": 14
+    },
+    {
+      "id": 218,
+      "Descripcion": "LUCERNA",
+      "idDepartamento": 14
+    },
+    {
+      "id": 219,
+      "Descripcion": "MERCEDES",
+      "idDepartamento": 14
+    },
+    {
+      "id": 220,
+      "Descripcion": "SAN FERNANDO",
+      "idDepartamento": 14
+    },
+    {
+      "id": 221,
+      "Descripcion": "SAN FRANCISCO DEL VALLE",
+      "idDepartamento": 14
+    },
+    {
+      "id": 222,
+      "Descripcion": "SAN JORGE",
+      "idDepartamento": 14
+    },
+    {
+      "id": 223,
+      "Descripcion": "SAN MARCOS",
+      "idDepartamento": 14
+    },
+    {
+      "id": 224,
+      "Descripcion": "SANTA FE",
+      "idDepartamento": 14
+    },
+    {
+      "id": 225,
+      "Descripcion": "SESENTI",
+      "idDepartamento": 14
+    },
+    {
+      "id": 226,
+      "Descripcion": "SINUAPA",
+      "idDepartamento": 14
+    },
+    {
+      "id": 227,
+      "Descripcion": "NUEVA OCOTEPEQUE",
+      "idDepartamento": 14
+    },
+    {
+      "id": 228,
+      "Descripcion": "SANTA B\u00c1RBARA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 229,
+      "Descripcion": "ARADA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 230,
+      "Descripcion": "ATIMA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 231,
+      "Descripcion": "AZACUALPA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 232,
+      "Descripcion": "CEGUACA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 233,
+      "Descripcion": "SAN JOS\u00c9 DE COLINAS",
+      "idDepartamento": 15
+    },
+    {
+      "id": 234,
+      "Descripcion": "CONCEPCI\u00d3N DEL NORTE",
+      "idDepartamento": 15
+    },
+    {
+      "id": 235,
+      "Descripcion": "CONCEPCI\u00d3N DEL SUR",
+      "idDepartamento": 15
+    },
+    {
+      "id": 236,
+      "Descripcion": "CHINDA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 237,
+      "Descripcion": "EL N\u00cdSPERO",
+      "idDepartamento": 15
+    },
+    {
+      "id": 238,
+      "Descripcion": "GUALALA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 239,
+      "Descripcion": "LLAMA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 240,
+      "Descripcion": "MACUELIZO",
+      "idDepartamento": 15
+    },
+    {
+      "id": 241,
+      "Descripcion": "NARANJITO",
+      "idDepartamento": 15
+    },
+    {
+      "id": 242,
+      "Descripcion": "NUEVO CELILAC",
+      "idDepartamento": 15
+    },
+    {
+      "id": 243,
+      "Descripcion": "PETOA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 244,
+      "Descripcion": "PROTECCI\u00d3N",
+      "idDepartamento": 15
+    },
+    {
+      "id": 245,
+      "Descripcion": "QUIMISTAN",
+      "idDepartamento": 15
+    },
+    {
+      "id": 246,
+      "Descripcion": "SAN FRANCISCO DE OJUERA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 247,
+      "Descripcion": "SAN LUIS",
+      "idDepartamento": 15
+    },
+    {
+      "id": 248,
+      "Descripcion": "SAN MARCOS",
+      "idDepartamento": 15
+    },
+    {
+      "id": 249,
+      "Descripcion": "SAN NICOL\u00c1S",
+      "idDepartamento": 15
+    },
+    {
+      "id": 250,
+      "Descripcion": "SAN PEDRO DE ZACAPA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 251,
+      "Descripcion": "SANTA RITA, SANTA BARBARA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 252,
+      "Descripcion": "SAN VICENTE CENTENARIO",
+      "idDepartamento": 15
+    },
+    {
+      "id": 253,
+      "Descripcion": "TRINIDAD",
+      "idDepartamento": 15
+    },
+    {
+      "id": 254,
+      "Descripcion": "LAS VEGAS",
+      "idDepartamento": 15
+    },
+    {
+      "id": 255,
+      "Descripcion": "NUEVA FRONTERA",
+      "idDepartamento": 15
+    },
+    {
+      "id": 256,
+      "Descripcion": "NACAOME",
+      "idDepartamento": 16
+    },
+    {
+      "id": 257,
+      "Descripcion": "ALIANZA",
+      "idDepartamento": 16
+    },
+    {
+      "id": 258,
+      "Descripcion": "AMAPALA",
+      "idDepartamento": 16
+    },
+    {
+      "id": 259,
+      "Descripcion": "ARAMECINA",
+      "idDepartamento": 16
+    },
+    {
+      "id": 260,
+      "Descripcion": "CARIDAD",
+      "idDepartamento": 16
+    },
+    {
+      "id": 261,
+      "Descripcion": "GOASCORAN",
+      "idDepartamento": 16
+    },
+    {
+      "id": 262,
+      "Descripcion": "LANGUE",
+      "idDepartamento": 16
+    },
+    {
+      "id": 263,
+      "Descripcion": "SAN FRANCISCO DE CORAY",
+      "idDepartamento": 16
+    },
+    {
+      "id": 264,
+      "Descripcion": "SAN LORENZO",
+      "idDepartamento": 16
+    },
+    {
+      "id": 265,
+      "Descripcion": "YORO",
+      "idDepartamento": 17
+    },
+    {
+      "id": 266,
+      "Descripcion": "ARENAL",
+      "idDepartamento": 17
+    },
+    {
+      "id": 267,
+      "Descripcion": "EL NEGRITO",
+      "idDepartamento": 17
+    },
+    {
+      "id": 268,
+      "Descripcion": "EL PROGRESO",
+      "idDepartamento": 17
+    },
+    {
+      "id": 269,
+      "Descripcion": "JOCON",
+      "idDepartamento": 17
+    },
+    {
+      "id": 270,
+      "Descripcion": "MORAZAN",
+      "idDepartamento": 17
+    },
+    {
+      "id": 271,
+      "Descripcion": "OLANCHITO",
+      "idDepartamento": 17
+    },
+    {
+      "id": 272,
+      "Descripcion": "SANTA RITA, YORO",
+      "idDepartamento": 17
+    },
+    {
+      "id": 273,
+      "Descripcion": "SULACO",
+      "idDepartamento": 17
+    },
+    {
+      "id": 274,
+      "Descripcion": "VICTORIA",
+      "idDepartamento": 17
+    },
+    {
+      "id": 275,
+      "Descripcion": "YORITO",
+      "idDepartamento": 17
+    },
+    {
+      "id": 276,
+      "Descripcion": "JUTICALPA",
+      "idDepartamento": 18
+    },
+    {
+      "id": 277,
+      "Descripcion": "CAMPAMENTO",
+      "idDepartamento": 18
+    },
+    {
+      "id": 278,
+      "Descripcion": "CATACAMAS",
+      "idDepartamento": 18
+    },
+    {
+      "id": 279,
+      "Descripcion": "CONCORDIA",
+      "idDepartamento": 18
+    },
+    {
+      "id": 280,
+      "Descripcion": "DULCE NOMBRE DE CULMI",
+      "idDepartamento": 18
+    },
+    {
+      "id": 281,
+      "Descripcion": "EL ROSARIO",
+      "idDepartamento": 18
+    },
+    {
+      "id": 282,
+      "Descripcion": "ESQUIPULAS",
+      "idDepartamento": 18
+    },
+    {
+      "id": 283,
+      "Descripcion": "GUALACO",
+      "idDepartamento": 18
+    },
+    {
+      "id": 284,
+      "Descripcion": "GUARIZAMA",
+      "idDepartamento": 18
+    },
+    {
+      "id": 285,
+      "Descripcion": "GUATA",
+      "idDepartamento": 18
+    },
+    {
+      "id": 286,
+      "Descripcion": "GUAYAPE",
+      "idDepartamento": 18
+    },
+    {
+      "id": 287,
+      "Descripcion": "JANO",
+      "idDepartamento": 18
+    },
+    {
+      "id": 288,
+      "Descripcion": "LA UNION",
+      "idDepartamento": 18
+    },
+    {
+      "id": 289,
+      "Descripcion": "MANGULILE",
+      "idDepartamento": 18
+    },
+    {
+      "id": 290,
+      "Descripcion": "MANTO",
+      "idDepartamento": 18
+    },
+    {
+      "id": 291,
+      "Descripcion": "SALAMA",
+      "idDepartamento": 18
+    },
+    {
+      "id": 292,
+      "Descripcion": "SAN ESTEBAN",
+      "idDepartamento": 18
+    },
+    {
+      "id": 293,
+      "Descripcion": "SAN FRCO. DE BECERRA",
+      "idDepartamento": 18
+    },
+    {
+      "id": 294,
+      "Descripcion": "SAN FRCO. DE LA PAZ",
+      "idDepartamento": 18
+    },
+    {
+      "id": 295,
+      "Descripcion": "STA. MARIA DEL REAL",
+      "idDepartamento": 18
+    },
+    {
+      "id": 296,
+      "Descripcion": "SILCA",
+      "idDepartamento": 18
+    },
+    {
+      "id": 297,
+      "Descripcion": "YOCON",
+      "idDepartamento": 18
+    },
+    {
+      "id": 298,
+      "Descripcion": "PATUCA",
+      "idDepartamento": 18
+    }
+];
+
+function formPlazaChangeMunicipio(){
+    var select = document.querySelector("#form [name='idMunicipio1']")
+    var departamento = document.querySelector("#form [name='idDepartamento1']").value
+    if (departamento != ""){
+        select.removeAttribute("disabled")
+        select.innerHTML = ""
+        var new_option = document.createElement("option");
+            new_option.setAttribute("value","");
+            new_option.setAttribute("hidden",true);
+            new_option.textContent = "Selecciona";
+        select.appendChild(new_option)
+        
+        municipios.forEach(element => {
+            if (element.idDepartamento == departamento){
+                var new_option = document.createElement("option");
+                    new_option.setAttribute("value",element.id);
+                    new_option.textContent = element.Descripcion;
+                select.appendChild(new_option)
+                }
+            })
+        select.value = "";
+    }else{
+        select.setAttribute("disabled","true")
+    }        
+}
+
+     </script>
+
+<script>
+
+
+  function guardarDatos() {
+    var nombre = document.getElementById('nombre').value;
+    var apellido = document.getElementById('apellido').value;
+    var dni = document.getElementById('dni').value;
+    var edad = document.getElementById('edad').edad;
+    var idDepartamento1 = document.getElementById('idDepartamento1').options[document.getSelection('idDepartamento1').selectedIndex].text;
+    var idMunicipio1 = document.getElementById('idMunicipio1').options[document.getSelection('idMunicipio1').selectedIndex].text;
+    var direccion = document.getElementById('direccion').direccion;
+    var telefono = document.getElementById('edad').telefono;
+    var tipo_sangre = document.getElementById('edad').tipo_sangre;
+    var contacto_emergencia = document.getElementById('edad').contacto_emergencia;
+    var telefono_emergencia = document.getElementById('edad').telefono_emergencia;
+    var fecha_actual = document.getElementById('fecha_actual').fecha_actual;
+
+    // Envío de los datos al archivo PHP para guardarlos en la base de datos
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "PHP/Guardar.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // Se ha recibido una respuesta del servidor
+        console.log(xhr.responseText);
+      }
+    };
+    xhr.send("nombre=" + nombre + "&apellido=" + apellido + "&dni=" + dni + "&edad=" + edad + "&idDepartamento1=" +
+    idDepartamento1+ "&idMunicipio1=" + idMunicipio1+ "&direccion=" + direccion+ "&telefono=" + telefono+ "&tipo_sangre=" +
+    tipo_sangre+ "&contacto_emergencia=" + contacto_emergencia+ "&telefono_emergencia=" + telefono_emergencia+ "&fecha_actual=" + fecha_actual);
+  }
+</script>
+
+
+
+
+</html>
+
